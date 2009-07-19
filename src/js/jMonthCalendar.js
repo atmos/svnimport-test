@@ -489,7 +489,12 @@
 			_dragableEvent(event, block, weekNumber);
 		}
 		
-		var link = jQuery('<a href="' + event.URL + '">' + event.Title + '</a>');
+		var link;
+		if (event.URL && event.URL.length > 0) {
+			link = jQuery('<a href="' + event.URL + '">' + event.Title + '</a>');
+		} else {
+			link = jQuery('<a>' + event.Title + '</a>');
+		}
 		link.click(function(e) { defaults.onEventLinkClick(event); e.stopPropagation();	});
 		
 		block.append(link);
