@@ -319,15 +319,15 @@
 			
 			//DateBox Events
 			var dateLink = jQuery('<div class="DateLabel"><a href="">' + currentDate.getDate() + '</a></div>').click(function(e) {
-				defaults.onDayLinkClick(currentDate);
+				defaults.onDayLinkClick(currentDate.clone());
 				e.stopPropagation();
 			});
 			
 			var dateBox = jQuery("<td></td>").attr(atts).append(dateLink).dblclick(function(e) {
-				defaults.onDayCellDblClick(currentDate);
+				defaults.onDayCellDblClick(currentDate.clone());
 				e.stopPropagation();
 			}).click(function(e) {
-				defaults.onDayCellClick(currentDate);
+				defaults.onDayCellClick(currentDate.clone());
 				e.stopPropagation();
 			});
 			
