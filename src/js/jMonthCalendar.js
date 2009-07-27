@@ -113,7 +113,7 @@
 				return eval('(' + jsonDateString + ')');
 			}
 			
-			return tdt;
+			return tDt;
 		}
 	};
 	
