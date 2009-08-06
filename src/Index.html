@@ -31,7 +31,6 @@
 					//				{ "EventID": 8, "StartDate": new Date(2009, 1, 2), "Title": "9:30 pm - this is a much longer title", "URL": "#", "Description": "This is a sample event description", "CssClass": "Meeting" }
 					//];
 					//$.jMonthCalendar.ReplaceEventCollection(events);
-					return true;
 				},
 				onEventLinkClick: function(event) { 
 					alert("event link click");
@@ -48,13 +47,11 @@
 				onEventBlockOut: function(event) {
 					return true;
 				},
-				onDayLinkClick: function(date) { 
-					alert(date.toLocaleDateString());
-					return true; 
+				onDayLinkClick: function(event) { 
+					alert(event.data.Date.toLocaleDateString());
 				},
-				onDayCellDblClick: function(date) {
-					alert("Date dbl clicked, (for adding new events at this date etc.)");
-					return true;
+				onDayCellDblClick: function(event) {
+					alert(event.data.Date.toLocaleDateString());
 				}
 			};
 			
@@ -67,10 +64,6 @@
 							{ "EventID": 5, "StartDateTime": "2009-07-03", "EndDateTime": "2009-07-14", "Title": "This is a much longer title", "URL": "#", "Description": "This is a sample event description", "CssClass": "Meeting" }
 			];
 			
-			var newoptions = { };
-			var newevents = [ ];
-			//$.jMonthCalendar.Initialize(newoptions, newevents);
-
 			
 			$.jMonthCalendar.Initialize(options, events);
 			
