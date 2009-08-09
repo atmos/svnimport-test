@@ -8,8 +8,6 @@
 *
 */
 (function($) {
-	var _beginDate;
-	var _endDate;
 	var _boxes = [];
 	var _eventObj = {};
 	
