@@ -31,27 +31,35 @@
 					//				{ "EventID": 8, "StartDate": new Date(2009, 1, 2), "Title": "9:30 pm - this is a much longer title", "URL": "#", "Description": "This is a sample event description", "CssClass": "Meeting" }
 					//];
 					//$.jMonthCalendar.ReplaceEventCollection(events);
+					alert(dateIn);
+				},
+				onMonthChanged: function(dateIn) {
+					alert(dateIn);
 				},
 				onEventLinkClick: function(event) { 
 					alert("event link click");
-					return true; 
+					alert(event.data.Event.Title);
+					event.stopPropagation();
 				},
 				onEventBlockClick: function(event) { 
 					alert("block clicked");
-					return true; 
+					alert(event.data.Event.Title);
+					event.stopPropagation();
 				},
 				onEventBlockOver: function(event) {
-					//alert(event.Title + " - " + event.Description);
-					return true;
+					alert(event.data.Event.Title + " - " + event.data.Event.Description);
 				},
 				onEventBlockOut: function(event) {
-					return true;
+					alert(event.data.Event.Title);
 				},
 				onDayLinkClick: function(event) { 
-					alert(event.data.Date.toLocaleDateString());
+					alert(event.data.Date);
 				},
 				onDayCellDblClick: function(event) {
-					alert(event.data.Date.toLocaleDateString());
+					alert(event.data.Date);
+				},
+				onShowMoreClick: function(eventArray) {
+					alert(eventArray.length);
 				}
 			};
 			
