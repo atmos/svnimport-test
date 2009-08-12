@@ -516,7 +516,7 @@
 	
 	$.J.ReplaceEventCollection = function(eventCollection) {
 		if(eventCollection) {
-			cEvents = []
+			cEvents = [];
 			cEvents = eventCollection;
 		}
 		
