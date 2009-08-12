@@ -553,7 +553,7 @@
 		this.label = label;
 		this.weekNumber = Math.floor(id / 7);
 		this.events= [];
-		this.isTooMannySet = false;
+		this.isTooManySet = false;
 		this.vOffset = 0;
 		
 		this.echo = function() {
@@ -562,7 +562,7 @@
 		
 		this.clear = function() {
 			this.events = [];
-			this.isTooMannySet = false;
+			this.isTooManySet = false;
 			this.vOffset = 0;
 		}
 		
