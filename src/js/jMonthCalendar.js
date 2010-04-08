@@ -213,7 +213,7 @@
 		if(def.navLinks.enableToday) {
 			//Create Today link for later
 			todayLink = $('<div class="TodayLink"><a class="link-today">'+ def.navLinks.t +'</a></div>').click(function() {
-				$.J.ChangeMonth(new Date());
+				$.J.ChangeMonth(new Date().clearTime());
 				return false;
 			});
 		}
