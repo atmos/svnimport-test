@@ -105,17 +105,17 @@
 			$.each(cEvents, function(){
 				var ev = this;
 				//Date Parse the JSON to create a new Date to work with here				
-				if(ev.StartDateTime) {
+				if(ev.StartDateTime != null) {
 					if (typeof ev.StartDateTime == 'object' && ev.StartDateTime.getDate) { this.StartDateTime = ev.StartDateTime; }
 					if (typeof ev.StartDateTime == 'string' && ev.StartDateTime.split) { this.StartDateTime = _getJSONDate(ev.StartDateTime); }
-				} else if(ev.Date) { // DEPRECATED
+				} else if(ev.Date != null) { // DEPRECATED
 					if (typeof ev.Date == 'object' && ev.Date.getDate) { this.StartDateTime = ev.Date; }
 					if (typeof ev.Date == 'string' && ev.Date.split) { this.StartDateTime = _getJSONDate(ev.Date); }
 				} else {
 					return;  //no start date, or legacy date. no event.
 				}
 				
-				if(ev.EndDateTime) {
+				if(ev.EndDateTime != null) {
 					if (typeof ev.EndDateTime == 'object' && ev.EndDateTime.getDate) { this.EndDateTime = ev.EndDateTime; }
 					if (typeof ev.EndDateTime == 'string' && ev.EndDateTime.split) { this.EndDateTime = _getJSONDate(ev.EndDateTime); }
 				} else {
