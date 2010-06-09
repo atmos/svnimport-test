@@ -166,6 +166,7 @@
 		_firstOfMonth = _workingDate.clone().moveToFirstDayOfMonth();
 		_lastOfMonth = _workingDate.clone().moveToLastDayOfMonth();
 		_gridOffset = _firstOfMonth.getDay() - def.firstDayOfWeek;
+		if (_gridOffset < 0) { _gridOffset = 6; }
 		_totalDates = _gridOffset + _daysInMonth;
 		_gridRows = Math.ceil(_totalDates / 7);
 		_totalBoxes = _gridRows * 7;
